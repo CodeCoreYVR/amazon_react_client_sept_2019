@@ -2,6 +2,7 @@ import React from "react";
 
 function ProductForm(props) {
   function handleSubmit(event) {
+    debugger;
     event.preventDefault();
     const { currentTarget } = event;
     const formData = new FormData(currentTarget);
@@ -17,7 +18,7 @@ function ProductForm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Product Body</label>
+        <label>Title</label>
         <input name="title" id="title" />
       </div>
       <div>

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Product } from "../requests";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import ProductForm from "./ProductForm";
 
 class ProductIndexPage extends Component {
   constructor(props) {
@@ -11,13 +10,6 @@ class ProductIndexPage extends Component {
       products: []
     };
     this.deleteProduct = this.deleteProduct.bind(this);
-    this.createProduct = this.createProduct.bind(this);
-  }
-
-  createProduct(params) {
-    Product.create(params).then(product => {
-      this.props.history.push(`/products/${product.id}`);
-    });
   }
 
   deleteProduct(productId) {
@@ -38,7 +30,6 @@ class ProductIndexPage extends Component {
     }
     return (
       <main className="ProductIndexPage" style={{ padding: "0  20px" }}>
-        <ProductForm onSubmit={this.createProduct} />
         <h1>Product Index</h1>
         <ul style={{ paddingLeft: "10px" }}>
           {products.map(product => (

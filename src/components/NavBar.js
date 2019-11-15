@@ -13,6 +13,7 @@ function NavBar(props) {
         Home
       </Link>
       <Link to="/products">Products</Link>
+      <Link to="/products/new">New Product</Link>
     </nav>
   );
 }
